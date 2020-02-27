@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+
+  task-manager:
+    container_name: task-manager
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/usr/src/task-manager
+      - ./usr/src/task-manager/node_modules
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=development
